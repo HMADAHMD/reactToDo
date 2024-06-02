@@ -15,7 +15,7 @@ const ToDoItems = ({name, date, index, deleteToDo}) => {
           <div className="col">{name}</div>
           <div className="col-3">{date}</div>
           <div className="col-2">
-            <Button name={<AiFillDelete />} type="btn btn-light" onClickFunction={deleteButton}></Button>
+            <Button btnType="button" name={<AiFillDelete />} type="btn btn-light" onClickFunction={deleteButton}></Button>
           </div>
         </div>
       </div>

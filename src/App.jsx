@@ -5,8 +5,8 @@ import {useState} from "react";
 
 function App() {
   const listTodos = [
-    {name: "hammad", date: "23"},
-    {name: "fahad", date: "19"}
+    {name: "chick fil ", date: "2024-05-15"},
+    {name: "wash", date: "2024-05-15"}
   ]
   const [list, setList] = useState(listTodos);
 
