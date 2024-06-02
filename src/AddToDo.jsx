@@ -10,7 +10,9 @@ const AddToDo = ({addButton}) => {
   const [inputText, setInputText] = useState("");
   const [inputDate, setInputDate] = useState("");
   const addClickButton = () => {
-    addButton();
+    addButton({name: inputText, date: inputDate});
+    setInputText("");
+    setInputDate("");
     console.log(`${inputText} added on ${inputDate}`)
   }
   return(
@@ -18,7 +20,7 @@ const AddToDo = ({addButton}) => {
       <div className={styles.addToDo}>
         <div className="row row-2">
         <div className="col">
-          <TextField value={inputText} onChange={(e) => setInputText(e.target.value)  }></TextField>
+          <TextField setText={inputText} onChange={(e) => setInputText(e.target.value)  }></TextField>
         </div>
         <div className="col-3">
           <input type="date" onChange={(e) => setInputDate(e.target.value)}></input>

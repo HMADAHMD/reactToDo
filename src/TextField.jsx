@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const TextField = ({value, onChange}) => {
+const TextField = ({setText, onChange}) => {
   return(
     <>
       <input
       type="text"
-      value={value}
+      value={setText}
       onChange={onChange}
       >
 
@@ -15,7 +15,7 @@ const TextField = ({value, onChange}) => {
 }
 
 TextField.prototype ={
-  value: PropTypes.string.isRequired,
+  setText: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 }
 export default TextField;

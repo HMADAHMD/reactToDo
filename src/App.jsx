@@ -10,15 +10,19 @@ function App() {
   ]
   const [list, setList] = useState(listTodos);
 
-  const addToDO = () => {
-    // console.log("add button pressed")
+  const addToDO = (newToDo) => {
+    setList([...list, newToDo])
+  }
+
+  const deleteTodo = (id) => {
+    setList(list.filter((_, index) => index !== id))
   }
   return (
     <>
       <div className="container">
           <AddToDo addButton={addToDO}></AddToDo>
-          {listTodos.map((todo, index) => (
-            <ToDoItems key={index} name={todo.name} date={todo.date} index={index}></ToDoItems>
+          {list.map((todo, index) => (
+            <ToDoItems key={index} name={todo.name} date={todo.date} index={index} deleteToDo={deleteTodo}></ToDoItems>
           ))}
       </div>
     </>
