@@ -10,9 +10,13 @@ function App() {
   ]
   const [list, setList] = useState(listTodos);
 
-  const addToDO = (newToDo) => {
-    setList([...list, newToDo])
-  }
+  // const addToDo = (newToDo) => {
+  //   setList([...list, newToDo])
+  // }
+
+  const addToDo = (newToDo) => {
+    setList((currentValue) => [...currentValue, newToDo]);
+  };
 
   const deleteTodo = (id) => {
     setList(list.filter((_, index) => index !== id))
@@ -20,7 +24,7 @@ function App() {
   return (
     <>
       <div className="container">
-          <AddToDo addButton={addToDO}></AddToDo>
+          <AddToDo addButton={addToDo}></AddToDo>
           {list.map((todo, index) => (
             <ToDoItems key={index} name={todo.name} date={todo.date} index={index} deleteToDo={deleteTodo}></ToDoItems>
           ))}
